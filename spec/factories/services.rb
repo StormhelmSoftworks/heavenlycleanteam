@@ -4,7 +4,8 @@ FactoryBot.define do
         rate 1
 
         factory :invalid_service do
-          # insert attributes
+          name nil
+          rate "invalid"
         end
 
         factory :updated_service do
