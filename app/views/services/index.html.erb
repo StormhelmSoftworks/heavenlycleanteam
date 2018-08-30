@@ -1,0 +1,27 @@
+<h1>Services</h1>
+<table>
+  <thead>
+    <th>
+      Service Name
+    </th>
+    <th>
+      Service Rate
+    </th>
+    <th>
+
+    </th>
+  </thead>
+  <tbody>
+  <% @services.each do |service| %>
+    <tr>
+      <td><%= service.name %></td>
+      <td>$<%= service.rate %></td>
+      <td>
+        <span class="table-options"><%= link_to "View", service_path(service) %></span>
+        <span class="table-options"><%= link_to "Edit", edit_service_path(service) %></span>
+        <span class="table-options"><%= link_to "Delete", service_path(service), method: :delete %></span>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

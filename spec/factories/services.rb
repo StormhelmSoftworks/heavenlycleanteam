@@ -1,7 +1,7 @@
 FactoryBot.define do
       factory :service do
-        name "MyString"
-        rate 1
+        name "Service1"
+        rate 100
 
         factory :invalid_service do
           name nil
@@ -13,7 +13,8 @@ FactoryBot.define do
         end
 
         factory :second_service do
-          # insert attributes
+          name "Service2"
+          rate 100
         end
       end
     end
