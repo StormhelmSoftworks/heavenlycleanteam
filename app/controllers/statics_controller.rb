@@ -4,4 +4,8 @@ class StaticsController < ApplicationController
 
   end
 
+  def about
+
+  end
+
 end

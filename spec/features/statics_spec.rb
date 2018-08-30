@@ -10,4 +10,11 @@ describe 'navigate' do
       expect(page.status_code).to eq(200)
     end
   end
+
+  describe 'about' do
+    it 'can be reached successfully' do
+      visit about_path
+      expect(page.status_code).to eq(200)
+    end
+  end
 end
