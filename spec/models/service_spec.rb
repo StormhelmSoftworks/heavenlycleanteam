@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Service, type: :model do
   describe "creation" do
     before do
-      user = create(:user)
+      user = User.create(email: "factory@factory.com", password: "123456")
       login_as user, :scope => :user
-      @service = Service.create(name: "All Rooms - Standard Clean", rate: "150")
+      @service = create(:service)
     end
 
     it "can be created" do
@@ -19,7 +19,7 @@ RSpec.describe Service, type: :model do
     end
 
     it "cannot be created if rate is not a number" do
-      @service.rate = "10"
+      @service.rate = "lol"
       expect(@service).to be_invalid
     end
 
