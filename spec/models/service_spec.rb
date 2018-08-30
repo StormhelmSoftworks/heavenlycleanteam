@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Service, type: :model do
   describe "creation" do
     before do
-      # user = User.create(email: "test@test.com", password: "123456", password_confirmation: "123456", first_name: "Jon", last_name: "Snow")
-      # login_as user, :scope => :user
+      user = User.create(email: "test@test.com", password: "123456", password_confirmation: "123456")
+      login_as user, :scope => :user
       @service = Service.create(name: "All Rooms - Standard Clean", rate: "150")
     end
 
