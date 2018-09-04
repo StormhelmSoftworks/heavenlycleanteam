@@ -18,8 +18,8 @@
       <td>$<%= service.rate %></td>
       <td>
         <span class="table-options"><%= link_to "View", service_path(service) %></span>
-        <span class="table-options"><%= link_to "Edit", edit_service_path(service) %></span>
-        <span class="table-options"><%= link_to "Delete", service_path(service), method: :delete %></span>
+        <span class="table-options"><%= link_to "Edit", edit_service_path(service), id: "edit_#{service.id}" %></span>
+        <span class="table-options"><%= link_to "Delete", service_path(service), method: :delete, id: "delete_#{service.id}" %></span>
       </td>
     </tr>
   <% end %>

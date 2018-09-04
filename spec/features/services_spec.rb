@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'navigate' do
+describe 'navigation' do
   before do
     user = User.create(email: "factory@factory.com", password: "123456")
     login_as @user, :scope => :user
@@ -23,9 +23,29 @@ describe 'navigate' do
       visit services_path
       expect(page).to have_content(/Service1|Service2/)
     end
+
+    describe 'new from index' do
+      it 'has a link from the home page' do
+        visit root_path
+
+        click_link("new_service_from_nav")
+        expect(page.status_code).to eq(200)
+
+      end
+    end
+
+    describe 'delete from index' do
+      it 'can be deleted' do
+        service = create(:service)
+        visit services_path
+
+        click_link("delete_service_#{service.id}_from_index")
+        expect(page.status_code).to eq(200)
+      end
+    end
   end
 
-  describe 'creation' do
+  describe 'new and create' do
     before do
       visit new_service_path
     end
@@ -34,20 +54,35 @@ describe 'navigate' do
     end
 
     it 'can be created from new form page' do
-      fill_in 'service[date]', with: "#{Date.today}"
-      fill_in 'service[rationale]', with: 'Some Rationale'
+      fill_in 'service[name]', with: "Test Service"
+      fill_in 'service[rate]', with: 150
 
       click_on 'Submit'
 
-      expect(page).to have_content("Rationale")
+      expect(page).to have_content("Test Service")
+    end
+  end
+
+  describe 'edit' do
+    before do
+      @service = create(:service)
+    end
+    it 'can be reached by edit on index page' do
+
+      visit services_path
+      click_link "edit_#{@service.id}"
+      expect(page.status_code).to eq(200)
     end
 
-    it 'will have a user associated with it' do
-      fill_in 'service[date]', with: "#{Date.today}"
-      fill_in 'service[rationale]', with: 'User Association'
+    it 'can be edited' do
+      visit edit_service_path(@service)
+
+      fill_in 'service[name]', with: "Edited Service"
+      fill_in 'service[rate]', with: 110
 
       click_on 'Submit'
-      expect(User.last.services.last.rationale).to eq("User Association")
+
+      expect(page).to have_content('Edited Service')
     end
   end
 end
