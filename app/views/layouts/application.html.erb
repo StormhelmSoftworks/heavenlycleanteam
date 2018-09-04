@@ -11,5 +11,6 @@
 
   <body>
     <%= yield %>
+    <%= js add_gritter(flash[:notice], title: "Timesheets App Notification", sticky: false, image: :notice) %>
   </body>
 </html>
