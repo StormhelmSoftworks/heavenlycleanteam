@@ -4,13 +4,24 @@
       <h1>The Heavenly Clean Team</h1>
       <p>Because Cleanliness is close to Godliness</p>
     </div>
-    <div class="col-md-6">
-      <ul></ul>
+    <div class="col-md-6" id="navigation">
+      <p>
+        <%= link_to "Home", root_path, class: "nav-btn" %>
+        <%= link_to "About", root_path, class: "nav-btn" %>
+        <%= link_to "Contact", root_path, class: "nav-btn" %>
+        <%= link_to "Get a quote!", root_path, class: "nav-btn" %>
+      </p>
+
     </div>
   </div>
-  <div class="row">
+  <div class="row" id="carousel">
       <div class="col-md-12">
         <%= render 'shared/carousel' %>
       </div>
-    </div>
+  </div>
+  <div class="row" id="badges">
+      <div class="col-md-12">
+        <%= image_tag asset_path("badge-100-satisfaction.jpg") %>
+      </div>
+  </div>
 </section>

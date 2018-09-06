@@ -1,3 +1,26 @@
 
 @import "bootstrap";
 @import "gritter";
+
+#navigation p {
+  width: 100%;
+  text-align: right;
+  @media only screen and (max-width : 1200px) {
+    text-align: center;
+  }
+}
+
+.nav-btn {
+  display: inline-block;
+  height: 50px;
+  width: 110px;
+  padding-top: 10px;
+  border: 1px solid black;
+  border-radius: 10%;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+.debug-outline {
+  border: 1px dashed red;
+}
