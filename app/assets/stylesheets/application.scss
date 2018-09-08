@@ -1,26 +1,33 @@
 
-@import "bootstrap";
+@import "material";
 @import "gritter";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
-#navigation p {
-  width: 100%;
-  text-align: right;
-  @media only screen and (max-width : 1200px) {
-    text-align: center;
-  }
-}
+$primary: #d699ff;
+$secondary: #5200B9;
 
-.nav-btn {
+.thct-btn-dark, .thct-btn-light {
   display: inline-block;
-  height: 50px;
-  width: 110px;
-  padding-top: 10px;
-  border: 1px solid black;
-  border-radius: 10%;
-  text-align: center;
-  text-decoration: none !important;
 }
+
+.thct-btn-dark {
+  background: $secondary;
+  color: #fff;
+}
+
+.thct-btn-light {
+  background: $primary;
+  color: $secondary;
+}
+
 
 .debug-outline {
   border: 1px dashed red;
+}
+
+
+#navbarSupportedContent{
+  div {
+    margin: 0 auto;
+  }
 }

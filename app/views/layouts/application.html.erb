@@ -10,7 +10,15 @@
   </head>
 
   <body>
+  <section class="container">
+    <%= render 'shared/navbar' %>
+    <div class="row" id="carousel">
+      <div class="col-md-12">
+        <%= render 'shared/carousel' %>
+      </div>
+    </div>
     <%= yield %>
+  </section>
     <%= js add_gritter(flash[:notice], title: "Timesheets App Notification", sticky: false, image: :notice) %>
   </body>
 </html>

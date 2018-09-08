@@ -16,5 +16,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require material
 //= require gritter
 //= require_tree .
