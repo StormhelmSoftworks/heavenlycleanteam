@@ -21,6 +21,17 @@ $secondary: #5200B9;
   color: $secondary;
 }
 
+.carousel-caption {
+  background-color: rgba(37,18,118, 0.7);
+}
+
+.carousel-inner {
+  img{
+    height: 300px;
+    width: 500px;
+
+  }
+}
 
 .debug-outline {
   border: 1px dashed red;
