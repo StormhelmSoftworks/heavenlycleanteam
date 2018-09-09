@@ -11,8 +11,8 @@ module ApplicationHelper
       </div>
       <div class='card-content'>
         <span class='card-title'>#{title}</span>
-        <a href='#{services_list_path}'>>></a>
         <p>#{desc}</p>
+        <a href='#{services_list_path}' class='btn btn-secondary'>Learn More</a>
                                                                                                                                               </div>
       </div>
      </div>".html_safe

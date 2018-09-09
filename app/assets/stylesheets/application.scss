@@ -6,6 +6,7 @@
 
 $primary: #d699ff;
 $secondary: #5200B9;
+$tertiary: #AB00B5;
 
 .thct-btn-dark, .thct-btn-light {
   display: inline-block;
@@ -52,8 +53,8 @@ $secondary: #5200B9;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  background: $secondary;
+  height: 500px;
+  background: $tertiary;
 
   .card {
     display: inline-block;
@@ -67,7 +68,7 @@ $secondary: #5200B9;
     }
 
     img {
-      height: auto;
+      height: 200px;
       width: 100%;
     }
   }
