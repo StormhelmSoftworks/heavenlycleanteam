@@ -8,4 +8,8 @@ class StaticsController < ApplicationController
 
   end
 
+  def services
+
+  end
+
 end

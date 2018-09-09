@@ -7,7 +7,7 @@ describe 'navigation' do
   end
   describe 'index' do
     before do
-      visit services_path
+      visit admin_services_path
     end
     it 'can be reached successfully' do
       expect(page.status_code).to eq(200)
@@ -20,7 +20,7 @@ describe 'navigation' do
     it 'has a list of services' do
       create(:service)
       create(:second_service)
-      visit services_path
+      visit admin_services_path
       expect(page).to have_content(/Service1|Service2/)
     end
 
@@ -28,7 +28,7 @@ describe 'navigation' do
       it 'has a link from the home page' do
         visit root_path
 
-        click_link("new_service_from_nav")
+        click_link("new_admin_service_from_nav")
         expect(page.status_code).to eq(200)
 
       end
@@ -37,9 +37,9 @@ describe 'navigation' do
     describe 'delete from index' do
       it 'can be deleted' do
         service = create(:service)
-        visit services_path
+        visit admin_services_path
 
-        click_link("delete_service_#{service.id}_from_index")
+        click_link("delete_admin_service_#{service.id}_from_index")
         expect(page.status_code).to eq(200)
       end
     end
@@ -47,7 +47,7 @@ describe 'navigation' do
 
   describe 'new and create' do
     before do
-      visit new_service_path
+      visit new_admin_service_path
     end
     it 'has a new form that can be reached' do
       expect(page.status_code).to eq(200)
@@ -69,13 +69,13 @@ describe 'navigation' do
     end
     it 'can be reached by edit on index page' do
 
-      visit services_path
+      visit admin_services_path
       click_link "edit_#{@service.id}"
       expect(page.status_code).to eq(200)
     end
 
     it 'can be edited' do
-      visit edit_service_path(@service)
+      visit edit_admin_service_path(@service)
 
       fill_in 'service[name]', with: "Edited Service"
       fill_in 'service[rate]', with: 110

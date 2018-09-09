@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   end
   root "statics#home"
   get "about", to: "statics#about"
-  resources :services
+  get "services", to: "statics#services", as: "services_list"
+  namespace :admin do
+    resources :services
+  end
 end
