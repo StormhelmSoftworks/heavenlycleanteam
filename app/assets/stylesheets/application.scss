@@ -2,6 +2,7 @@
 @import "material";
 @import "gritter";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://fonts.googleapis.com/css?family=Caveat+Bush";
 
 $primary: #d699ff;
 $secondary: #5200B9;
@@ -35,4 +36,20 @@ $secondary: #5200B9;
 #logo {
   height: 50px;
   width: auto;
+}
+
+#companyname {
+  font-family: 'Caveat Bush', cursive;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h4 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  #companyname, .carousel-caption {
+    display: none;
+  }
 }
