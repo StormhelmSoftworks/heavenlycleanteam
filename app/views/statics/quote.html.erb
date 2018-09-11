@@ -1,6 +1,6 @@
 <section class="services-list">
   <div id="debug list">
-    <p>Beds: <input type="text" name="beds" id="beds_field"/></p>
+    <p>Beds: <input type="text" name="beds" id="beds_field" value="0"/></p>
     <p>Baths: <input type="text" name="baths" id="baths_field"/></p>
     <p>Closets: <input type="text" name="closets" id="closets_field"/></p>
     <ul>
@@ -8,5 +8,27 @@
       <li>Bath Cleaning, Rate: 30/room/hr <input type="checkbox" name="baths_check" id="baths_check" /></li>
       <li>Closet Cleaning, Rate: 15/room/hr <input type="checkbox" name="closets_check" id="closets_check" /></li>
     </ul>
+    Total: <span id="total">0</span>
   </div>
 </section>
+
+<script type="text/javascript">
+  var total = 0;
+  var services = {};
+  $('input[type="checkbox"]').each(function() {
+      var service_name = $(this).attr('id');
+      services[service_name] = service_name;
+  });
+  console.log("Quotes loaded", services);
+  $("#beds_check").change(function() {
+      if(this.checked) {
+          console.log("Checked");
+          total += 30 * $("#beds_field").val();
+          $("#total").html(total);
+      } else {
+          console.log("Unchecked");
+          total -= 30 * $("#beds_field").val();
+          $("#total").html(total);
+      }
+  });
+</script>
