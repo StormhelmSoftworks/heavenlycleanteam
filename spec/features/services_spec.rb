@@ -56,6 +56,7 @@ describe 'navigation' do
     it 'can be created from new form page' do
       fill_in 'service[name]', with: "Test Service"
       fill_in 'service[rate]', with: 150
+      fill_in 'service[category', with: "Category"
 
       click_on 'Submit'
 

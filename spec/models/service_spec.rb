@@ -15,6 +15,7 @@ RSpec.describe Service, type: :model do
     it "cannot be created without a date and rationale" do
       @service.name = nil
       @service.rate = nil
+      @service.category = nil
       expect(@service).to be_invalid
     end
 

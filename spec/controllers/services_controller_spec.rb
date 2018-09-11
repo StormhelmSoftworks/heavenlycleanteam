@@ -1,6 +1,6 @@
 
 require 'rails_helper'
-RSpec.describe ServicesController, type: :controller do
+RSpec.describe Admin::ServicesController, type: :controller do
 describe 'GET #new' do
       it 'returns http success' do
         get :new
@@ -36,7 +36,7 @@ describe 'POST #update' do
       end
       it 'redirects on update' do
         patch :update, params: {id: service.to_param,service: new_attributes}
-        expect(response).to redirect_to(services_path)
+        expect(response).to redirect_to(admin_services_path)
       end
       it 'renders a flash message on update' do
         patch :update, params: {id: service.to_param,service: new_attributes}
@@ -51,7 +51,7 @@ describe 'POST #update' do
       end
       it 'redirects to edit template on failure to update service' do
         patch :update, params: {id: service.to_param,service: invalid_attributes}
-        expect(response).to redirect_to(edit_service_path(service))
+        expect(response).to redirect_to(edit_admin_service_path(service))
       end
     end
 describe 'POST #create' do
@@ -65,7 +65,7 @@ describe 'POST #create' do
       end
       it 'redirects on save' do
         post :create, params: {service: valid_attributes}
-        expect(response).to redirect_to(services_path)
+        expect(response).to redirect_to(admin_services_path)
       end
       it 'renders a flash message on save' do
         post :create, params: {service: valid_attributes}
@@ -76,7 +76,7 @@ describe 'POST #create' do
       end
       it 'redirects to new template on failure to save new service' do
         post :create, params: {service: invalid_attributes}
-        expect(response).to redirect_to(new_service_path)
+        expect(response).to redirect_to(new_admin_service_path)
       end
     end
 describe 'GET #show' do
@@ -119,7 +119,7 @@ describe 'DELETE #destroy' do
       it 'redirects to services_path after destroy' do
         service.save
         delete :destroy, params: {id: service.to_param }
-        expect(response).to redirect_to(services_path)
+        expect(response).to redirect_to(admin_services_path)
       end
     end
 end

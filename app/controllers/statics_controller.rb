@@ -1,4 +1,5 @@
 class StaticsController < ApplicationController
+  before_action :set_services, only: [:services, :quote]
 
   def home
 
@@ -11,5 +12,15 @@ class StaticsController < ApplicationController
   def services
 
   end
+
+  def quote
+
+  end
+
+  private
+
+    def set_services
+      @services = Service.all
+    end
 
 end
