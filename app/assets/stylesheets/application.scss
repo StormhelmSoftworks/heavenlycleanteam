@@ -7,6 +7,7 @@
 $primary: #d699ff;
 $secondary: #5200B9;
 $tertiary: #AB00B5;
+$white: #fff;
 
 .thct-btn-dark, .thct-btn-light {
   display: inline-block;
@@ -14,7 +15,7 @@ $tertiary: #AB00B5;
 
 .thct-btn-dark {
   background: $secondary;
-  color: #fff;
+  color: $white;
 }
 
 .thct-btn-light {
@@ -50,11 +51,7 @@ $tertiary: #AB00B5;
 }
 
 .services {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 500px;
-  background: $tertiary;
 
   .card {
     display: inline-block;
@@ -73,6 +70,46 @@ $tertiary: #AB00B5;
     }
   }
 }
+
+.services-list {
+  height: 600px;
+}
+
+.services, .services-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $tertiary;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: $white;
+  background: $secondary;
+
+  #footer-nav {
+    a {
+      display: inline-block;
+      padding: 5px 10px 5px 10px;
+    }
+  }
+
+  #footer-social {
+    i {
+      padding: 5px 10px 5px 10px;
+    }
+  }
+
+}
+
+.footer * {
+  text-align: center;
+}
+
+
 
 .debug-outline {
   border: 1px dashed red;
@@ -94,13 +131,23 @@ $tertiary: #AB00B5;
   font-family: 'Caveat Bush', cursive;
 }
 
-@media only screen and (max-width : 1200px) {
+@media (max-width: 1200px) {
   .carousel-inner img {
     height: auto;
     width: auto;
   }
-}
 
+  .services {
+    height: 600px;
+    .card {
+      height: 500px;
+      img {
+        height: 200px;
+        width: 100%;
+      }
+    }
+  }
+}
 @media (max-width: 768px) {
   .carousel-caption h4 {
     display: none;
@@ -117,12 +164,29 @@ $tertiary: #AB00B5;
     }
   }
 
+  .services {
+    display: block;
+
+    .card {
+      display: block;
+      height: 160px;
+      width: auto;
+      margin: 0 auto;
+
+      img {
+        display: none;
+      }
+    }
+  }
+
 }
 
 @media (max-width: 480px) {
   #companyname, .carousel-caption {
     display: none;
   }
+
+
 
 
 
