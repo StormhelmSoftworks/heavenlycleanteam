@@ -121,6 +121,7 @@
 </div>
 <script type="text/javascript">
   var total = 0;
+  var services = [];
   $("#service-list-expander").bind("click", function(){
      $(".services-list").css("height", 1600);
      $("#service-list-expander").fadeOut();
@@ -134,14 +135,20 @@
       if(this.checked) {
           console.log(field);
           qty == 0 ? total += rate * $("#" + field + "_field").val() : total += rate;
-          console.log(total);
-          $("#total").html("$" + total);
+          services.push(field);
+          updateTotal();
       } else {
-          console.log("Unchecked");
+
           qty == 0 ? total -= rate * $("#" + field + "_field").val() : total -= rate;
-          $("#total").html("$" + total);
+          updateTotal();
       }
   });
+
+  function updateTotal() {
+      $("#selected_services").val(services.join(", "));
+      $("#quoted_amount").val(total);
+      $("#total").html("$" + total);
+  }
 
 
   function Validate() {

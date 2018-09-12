@@ -74,6 +74,12 @@ $white: #fff;
 
 .services-list {
   height: 1000px;
+  overflow: auto;
+  #services_page {
+    margin: 0 auto;
+    width: 85%;
+    color: #fff;
+  }
 }
 
 .services, .services-list, .about {

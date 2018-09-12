@@ -48,7 +48,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: heavenlycleanteam_production
-  username: heavenlycleanteam
-  password: <%= ENV['HEAVENLYCLEANTEAM_DATABASE_PASSWORD'] %>
+    url: <%= ENV['DATABASE_URL'] %>
