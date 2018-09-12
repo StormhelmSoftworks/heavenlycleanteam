@@ -19,4 +19,8 @@ module ApplicationHelper
 
 
   end
+
+  def nav_link(text, path)
+    link_to(text, path, class: "btn thct-btn-#{request.path == path ? "dark" : "light"}")
+  end
 end
