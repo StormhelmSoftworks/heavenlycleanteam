@@ -111,7 +111,10 @@
       <input name="466d0901-e185-406f-a70c-9bb1cd5961ab" type="text" maxlength="255" value="" id="selected_services" style="display: none"/>
     </div>
 
-
+    <div id="total-container">
+      <p>Your Quote</p>
+      <span id="total">$0</span>/hr
+    </div>
 
 
   </form>
@@ -132,11 +135,11 @@
           console.log(field);
           qty == 0 ? total += rate * $("#" + field + "_field").val() : total += rate;
           console.log(total);
-          $("#total").html(total);
+          $("#total").html("$" + total);
       } else {
           console.log("Unchecked");
           qty == 0 ? total -= rate * $("#" + field + "_field").val() : total -= rate;
-          $("#total").html(total);
+          $("#total").html("$" + total);
       }
   });
 

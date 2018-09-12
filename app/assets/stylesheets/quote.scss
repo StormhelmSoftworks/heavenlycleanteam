@@ -11,3 +11,17 @@
 
 }
 
+#total-container {
+  position: fixed;
+  top: 75%;
+  right: 0;
+  background: #ffccff;
+  height: 100px;
+  width: 200px;
+  border-radius: 15%;
+
+  #total {
+    font-size: 32px;
+  }
+}
+
