@@ -22,9 +22,6 @@
 
     <p>Closets</p>
     <input name="d65a8bea-e5ac-4937-825b-e0af9ea91013" type="number" id="closet_field" min="0" max="255" value="0" class="form-control"/>
-    <input id="kitchen_field" value="1" style="display: none"/>
-    <input id="dining_field" value="1" style="display: none"/>
-    <input id="living_field" value="1" style="display: none"/>
 
     <br />
     <h4>What services do you need?</h4>
@@ -36,9 +33,8 @@
       </a>
       <div class="collapse" id="partial_services">
           <% @partials.each do |service| %>
-            <p><%= service.name %> Cleaning ($<%= service.rate %>) Add: <input type="checkbox" name="<%= service.name %>_<%= service.rate %>" class="checkbox"/></p>
+            <p><%= service.display_name %> Cleaning ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
           <% end %>
-
       </div>
     </div>
 
@@ -50,7 +46,9 @@
       </a>
 
       <div class="collapse" id="package_services">
-        Insert Services
+        <% @packages.each do |service| %>
+          <p><%= service.display_name %> Cleaning ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
+        <% end %>
       </div>
     </div>
 
@@ -63,7 +61,9 @@
 
       <div class="collapse" id="exterior_services">
         <p>Checking these will require exterior measurements for the size of your property.</p>
-        Insert Services
+        <% @exteriors.each do |service| %>
+          <p><%= service.display_name %> Cleaning ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
+        <% end %>
       </div>
     </div>
 
@@ -75,7 +75,9 @@
       </a>
 
       <div class="collapse" id="other_services">
-        Insert Services
+        <% @others.each do |service| %>
+          <p><%= service.display_name %> Cleaning ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
+        <% end %>
       </div>
     </div>
 
@@ -123,16 +125,17 @@
 
   $(".checkbox").change(function() {
       var attrs = $(this).attr('name').split("_");
-      var field = attrs.shift().toLowerCase();
-      var rate =  parseInt(attrs.pop());
+      var field = attrs[0].toLowerCase();
+      var rate =  parseInt(attrs[1]);
+      var qty = parseInt(attrs[2]);
       if(this.checked) {
           console.log(field);
-          total += rate * $("#" + field + "_field").val();
+          qty == 0 ? total += rate * $("#" + field + "_field").val() : total += rate;
           console.log(total);
           $("#total").html(total);
       } else {
           console.log("Unchecked");
-          total -= rate * $("#" + field + "_field").val();
+          qty == 0 ? total -= rate * $("#" + field + "_field").val() : total -= rate;
           $("#total").html(total);
       }
   });
