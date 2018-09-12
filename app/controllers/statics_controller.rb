@@ -9,6 +9,10 @@ class StaticsController < ApplicationController
 
   end
 
+  def contact
+
+  end
+
   def services
 
   end

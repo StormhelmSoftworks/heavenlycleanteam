@@ -2,7 +2,7 @@
 @import "material";
 @import "gritter";
 @import "quote.scss";
-//@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 //@import "https://fonts.googleapis.com/css?family=Caveat+Bush";
 
 $primary: #d699ff;
@@ -76,11 +76,26 @@ $white: #fff;
   height: 1000px;
 }
 
-.services, .services-list {
+.services, .services-list, .about {
   display: flex;
   justify-content: center;
   align-items: center;
   background: $tertiary;
+}
+
+.about {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  color: $secondary;
+  background: $primary;
+  div {
+    width: 80%;
+  }
+
+  img {
+    margin: 5px 0px 5px 0px;
+  }
 }
 
 .footer {
