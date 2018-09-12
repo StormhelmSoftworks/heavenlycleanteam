@@ -15,6 +15,15 @@ class StaticsController < ApplicationController
 
   def quote
 
+    @partials = Service.category?("Partial")
+    @packages = Service.category?("Package")
+    @exteriors = Service.category?("Exterior")
+    @others = Service.category?("Other")
+
+  end
+
+  def debug
+    
   end
 
   private

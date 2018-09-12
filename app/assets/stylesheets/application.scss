@@ -1,6 +1,7 @@
 
 @import "material";
 @import "gritter";
+@import "quote.scss";
 //@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 //@import "https://fonts.googleapis.com/css?family=Caveat+Bush";
 
@@ -72,7 +73,7 @@ $white: #fff;
 }
 
 .services-list {
-  height: 600px;
+  height: 1000px;
 }
 
 .services, .services-list {

@@ -12,44 +12,18 @@
 
 <section class="services-list">
 
-  <div>
-    <p>Beds: <input type="text" name="beds" id="bedrooms_field" value="0"/></p>
-    <p>Baths: <input type="text" name="baths" id="bathrooms_field" value="0"/></p>
-    <p>Closets: <input type="text" name="closets" id="closets_field" value="0"/></p>
-    <h3>Services Test</h3>
-    <% @services.each do |service| %>
-      <p><%= service.name %>, Rate: <%= service.rate %> per hour/per room Add: <%= check_box_tag "#{service.name}_#{service.rate}" %></p>
-    <% end %>
-  </div>
-
-
-
+  <%= render 'quote_form' %>
 
 </section>
 
 <script type="text/javascript">
-  var total = 0;
-  var services = {};
 
-  $('input[type="checkbox"]').each(function() {
-      var service = $(this).attr('name').split("_");
-      var service_name = service[0].toLowerCase();
-      var service_rate = parseInt(service[1]);
-      console.log(service_name, service_rate);
-      services[service_name] = service_rate;
-  });
-  console.log("Quotes loaded", services);
-  $(".checkbox").change(function() {
-      var field = $(this).attr('id').split("_").shift();
-      if(this.checked) {
-          console.log("Checked");
-          console.log(field);
-          total += 30 * $("#" + field + "_field").val();
-          $("#total").html(total);
-      } else {
-          console.log("Unchecked");
-          total -= 30 * $("#" + field + "_field").val();
-          $("#total").html(total);
-      }
-  });
+  // $('input[type="checkbox"]').each(function() {
+  //     var service = $(this).attr('name').split("_");
+  //     var service_name = service[0].toLowerCase();
+  //     var service_rate = parseInt(service[1]);
+  //     console.log(service_name, service_rate);
+  //     services[service_name] = service_rate;
+  // });
+
 </script>

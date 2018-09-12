@@ -1,0 +1,180 @@
+<div id="MainDivDomID">
+  <form id="BacktellForm0231943" action="https://my.serviceautopilot.com/ProcessForm.aspx" enctype="multipart/form-data" data-ajax="false" method="post" onsubmit="return Validate()">
+    <input type="hidden" name="Source" value="web"/><input type="hidden" name="FormID" value="3f88dbe7-86ad-4c5c-a484-fec61b430e3e"/>
+
+    <h4>What kind of residence do you have?</h4>
+    <select name="7f279813-16dd-4ace-a563-81905f1610c8" class="form-control">
+      <option value="House" selected="selected">House</option>
+      <option value="Apartment">Apartment</option>
+      <option value="Double-Wide">Double-Wide</option>
+    </select>
+
+    <br />
+    <h4>How many beds, baths, and closets are in your home?</h4>
+    <br />
+
+
+    <p>Beds</p>
+    <input name="d565aaeb-7f4f-4ee2-b7e0-c31f2257ff3e" type="number" min="0" max="255" value="0" class="form-control"/>
+
+    <p>Baths</p>
+    <input name="11587dae-f80f-4d91-b2d1-c0e38d03109e" type="number" min="0" max="255" value="0" class="form-control"/>
+
+    <p>Closets</p>
+    <input name="d65a8bea-e5ac-4937-825b-e0af9ea91013" type="number" min="0" max="255" value="0" class="form-control"/>
+
+    <br />
+    <h4>What services do you need?</h4>
+    <br />
+
+    <div class="service-container">
+      <div class="service-header">Partial Cleaning Services</div>
+      <a class="btn btn-primary" data-toggle="collapse" href="#partial_services" role="button" aria-expanded="false" aria-controls="collapseExample">
+        SHOW
+      </a>
+      <div class="collapse" id="partial_services">
+
+        Insert services
+
+      </div>
+    </div>
+
+    <div class="service-container">
+      <div class="service-header">Package Cleaning Services</div>
+      <a class="btn btn-primary" data-toggle="collapse" href="#package_services" role="button" aria-expanded="false" aria-controls="collapseExample">
+        SHOW
+      </a>
+
+      <div class="collapse" id="package_services">
+        Insert Services
+      </div>
+    </div>
+
+    <div class="service-container">
+      <div class="service-header">Exterior Only Services</div>
+      <a class="btn btn-primary" data-toggle="collapse" href="#exterior_services" role="button" aria-expanded="false" aria-controls="collapseExample">
+        SHOW
+      </a>
+
+      <div class="collapse" id="exterior_services">
+        <p>Checking these will require exterior measurements for the size of your property.</p>
+        Insert Services
+      </div>
+    </div>
+
+    <div class="service-container">
+      <div class="service-header">Other Services</div>
+      <a class="btn btn-primary" data-toggle="collapse" href="#other_services" role="button" aria-expanded="false" aria-controls="collapseExample">
+        SHOW
+      </a>
+
+      <div class="collapse" id="other_services">
+        Insert Services
+      </div>
+    </div>
+
+    <br/>
+    <a class="btn btn-primary btn-block" data-toggle="collapse" href="#about_you" role="button" aria-expanded="false" aria-controls="collapseExample">
+      NEXT
+    </a>
+    <br/>
+
+    <div class="collapse form-group" id="about_you">
+      <h4>About You</h4>
+
+      <input name="6b9be094-06da-4dee-9ac0-fb6d3f739c5e_First" type="text" value="" placeholder="First Name (Required)" class="form-control"/>
+      <br/>
+      <input name="6b9be094-06da-4dee-9ac0-fb6d3f739c5e_Last" type="text" value="" placeholder="Last Name (Required)" class="form-control"/>
+      <br/>
+      <input name="1609fe73-6a36-4d3a-8e28-824f4a98d00d_Address" type="text" value="" placeholder="Address (Required)" class="form-control"/>
+      <br/>
+      <input name="1609fe73-6a36-4d3a-8e28-824f4a98d00d_City" type="text" value="" placeholder="City (Required)" class="form-control"/>
+      <br/>
+      <input name="1609fe73-6a36-4d3a-8e28-824f4a98d00d_State" type="text"  value=""placeholder="State (Required)" class="form-control"/>
+      <br/>
+      <input name="1609fe73-6a36-4d3a-8e28-824f4a98d00d_Zip" type="text" value="" placeholder="Zip (Required)" class="form-control"/>
+      <br/>
+      <input name="4630074a-1c56-4eb2-beae-5c070af88514" type="text" maxlength="255" value="" placeholder="Email (Required)" class="form-control"/>
+      <br/>
+      <input name="520f0e0e-8ad3-41ab-8e7a-be7918255b73" type="text" placeholder="Phone Number (Required)" class="form-control"/>
+      <br/>
+      <button onclick="Validate()" class="btn btn-primary">Submit</button>
+      <input name="1fb55462-fc40-40fd-9372-dccb2bd839d1" type="text" maxlength="255" value="" id="quoted_amount" style="display: none"/>
+      <input name="466d0901-e185-406f-a70c-9bb1cd5961ab" type="text" maxlength="255" value="" id="selected_services" style="display: none"/>
+    </div>
+
+
+
+
+  </form>
+</div>
+<script type="text/javascript">function Validate() {
+    var IsValidated = true;
+    var FieldNames = [];
+    var Found = false;
+    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var email = document.getElementsByName('4630074a-1c56-4eb2-beae-5c070af88514')[0].value;
+    if (email == "" || re.test(email) != (true)) {
+        IsValidated = false;
+    }
+    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var email = document.getElementsByName('4630074a-1c56-4eb2-beae-5c070af88514')[0].value;
+    if (email == "" || re.test(email) != (true)) {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_First')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_Last')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Address')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_City')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_State')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Zip')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('520f0e0e-8ad3-41ab-8e7a-be7918255b73')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_First')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_Last')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Address')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_City')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_State')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Zip')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (document.getElementsByName('520f0e0e-8ad3-41ab-8e7a-be7918255b73')[0].value.trim() == "") {
+        IsValidated = false;
+    }
+    if (IsValidated == true) {
+        document.getElementById("BacktellForm0231943").submit();
+    } else {
+        alert("Please fill out all required fields.");
+    }
+}
+
+function CreateEntity() {
+    document.getElementById("submitButtonText").value = "create";
+    Validate()
+}
+
+
+</script>
