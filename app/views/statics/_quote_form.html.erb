@@ -28,7 +28,7 @@
     <br />
 
     <div class="service-container">
-      <a class="btn btn-secondary" data-toggle="collapse" href="#partial_services" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <a class="btn btn-secondary btn-block" data-toggle="collapse" href="#partial_services" role="button" aria-expanded="false" aria-controls="collapseExample">
         Partial Cleaning Services
       </a>
       <div class="collapse" id="partial_services">
@@ -41,13 +41,13 @@
     <br/>
 
     <div class="service-container">
-      <a class="btn btn-secondary" data-toggle="collapse" href="#package_services" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <a class="btn btn-secondary btn-block" data-toggle="collapse" href="#package_services" role="button" aria-expanded="false" aria-controls="collapseExample">
         Package Cleaning Services
       </a>
 
       <div class="collapse" id="package_services">
         <% @packages.each do |service| %>
-          <p><%= service.display_name %> Cleaning ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
+          <p><%= service.display_name %> ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
         <% end %>
       </div>
     </div>
@@ -55,14 +55,14 @@
     <br/>
 
     <div class="service-container">
-      <a class="btn btn-secondary" data-toggle="collapse" href="#exterior_services" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <a class="btn btn-secondary btn-block" data-toggle="collapse" href="#exterior_services" role="button" aria-expanded="false" aria-controls="collapseExample">
         Exterior Only Services
       </a>
 
       <div class="collapse" id="exterior_services">
         <p>Checking these will require exterior measurements for the size of your property.</p>
         <% @exteriors.each do |service| %>
-          <p><%= service.display_name %> Cleaning ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
+          <p><%= service.display_name %> ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
         <% end %>
       </div>
     </div>
@@ -70,13 +70,13 @@
     <br/>
 
     <div class="service-container">
-      <a class="btn btn-secondary" data-toggle="collapse" href="#other_services" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <a class="btn btn-secondary btn-block" data-toggle="collapse" href="#other_services" role="button" aria-expanded="false" aria-controls="collapseExample">
         Other Services
       </a>
 
       <div class="collapse" id="other_services">
         <% @others.each do |service| %>
-          <p><%= service.display_name %> Cleaning ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
+          <p><%= service.display_name %> ($<%= service.rate %>) <input type="checkbox" name="<%= service.name %>_<%= service.rate %>_<%= service.qty %>" class="checkbox"/></p>
         <% end %>
       </div>
     </div>
@@ -123,7 +123,7 @@
   var total = 0;
   var services = [];
   $("#service-list-expander").bind("click", function(){
-     $(".services-list").css("height", 1600);
+     $(".services-list").css("height", 2000);
      $("#service-list-expander").fadeOut();
   });
 
@@ -138,11 +138,22 @@
           services.push(field);
           updateTotal();
       } else {
-
+          removeService(services, field);
           qty == 0 ? total -= rate * $("#" + field + "_field").val() : total -= rate;
           updateTotal();
       }
   });
+
+  function removeService(services) {
+      var field, a = arguments, i = a.length, ax;
+      while (i > 1 && services.length) {
+          field = a[i--];
+          while ((ax= services.indexOf(field)) !== -1) {
+              services.splice(ax, 1);
+          }
+      }
+      return services;
+  }
 
   function updateTotal() {
       $("#selected_services").val(services.join(", "));

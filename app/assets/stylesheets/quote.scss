@@ -2,11 +2,24 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  padding: 50px;
   width: 85%;
   background: #fff;
 
   form * {
     text-align: center;
+  }
+
+  h4 {
+    padding: 10px;
+    background: #5200B9;
+    color: #fff;
+  }
+
+  #partial_services, #package_services, #exterior_services, #other_services {
+    height: 100px;
+    overflow: auto;
+    border: 1px solid #5200B9;
   }
 
 }
