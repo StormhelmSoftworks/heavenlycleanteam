@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "services", to: "statics#services", as: "services_list"
   get "debug", to: "statics#debug"
   namespace :admin do
-    resources :services
+    resources :services, except: [:create, :update, :show]
+    post "services/new", to: "services#create"
+    post "services/edit", to: "services#update"
   end
 end

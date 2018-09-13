@@ -1,13 +1,9 @@
 module Admin
   class ServicesController < ApplicationController
-    before_action :set_service, only: [:show, :edit, :update, :delete, :destroy]
+    before_action :set_service, only: [:edit, :update, :delete, :destroy]
 
     def index
       @services = Service.all
-    end
-
-    def show
-
     end
 
     def new

@@ -1,6 +1,6 @@
 <div class="admin-form">
   <h4><%= @page_header %></h4>
-  <%= form_for(@service, url: new_admin_service_path, method: :get) do |f| %>
+  <%= form_for(@service, url: admin_services_new_path, method: :post) do |f| %>
 
     <div class="form-group">
       <%= f.text_field :name, class: "form-control", placeholder: "Service Name" %>

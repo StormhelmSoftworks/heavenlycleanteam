@@ -23,4 +23,10 @@ module ApplicationHelper
   def nav_link(text, path)
     link_to(text, path, class: "btn thct-btn-#{request.path == path ? "dark" : "light"}")
   end
+
+  def admin_nav
+    if current_user
+      render "shared/admin_controls"
+    end
+  end
 end
