@@ -82,8 +82,14 @@ body {
   overflow: auto;
   #services_page {
     margin: 0 auto;
+    padding-top: 150px;
     width: 85%;
     color: #fff;
+
+    h4 {
+      padding: 10px;
+      background: $secondary;
+    }
   }
 }
 
@@ -184,6 +190,13 @@ body {
     }
   }
 
+
+
+  #services_page {
+    padding-top: 200px;
+  }
+
+
   #navbarSupportedContent {
     div a {
       margin-top: 10px;
@@ -221,6 +234,10 @@ body {
     }
   }
 
+  .services-list {
+    padding-top: 300px;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -228,7 +245,9 @@ body {
     display: none;
   }
 
-
+  .services-list {
+    padding-top: 400px;
+  }
 
 
 
