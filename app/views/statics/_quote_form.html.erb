@@ -127,6 +127,7 @@
 <script type="text/javascript">
   var total = 0;
   var services = [];
+  var service_history = [];
   $("#service-list-expander").bind("click", function(){
       var el = "#about_you";
       var el2 = "#quote_form_upper";
@@ -146,28 +147,28 @@
       if(this.checked) {
           console.log(field);
           qty == 0 ? total += rate * $("#" + field + "_field").val() : total += rate;
+          service_history = services;
+          console.log(service_history, services);
           services.push(field);
           updateTotal();
+          updateServices();
+          console.log(service_history, services);
       } else {
-          removeService(services, field);
+          services = [];
+          services = service_history;
+          console.log(service_history, services);
           qty == 0 ? total -= rate * $("#" + field + "_field").val() : total -= rate;
           updateTotal();
+          updateServices();
+          console.log(service_history, services);
       }
   });
 
-  function removeService(services) {
-      var field, a = arguments, i = a.length, ax;
-      while (i > 1 && services.length) {
-          field = a[i--];
-          while ((ax= services.indexOf(field)) !== -1) {
-              services.splice(ax, 1);
-          }
-      }
-      return services;
-  }
-
-  function updateTotal() {
+  function updateServices() {
+      $("#selected_services").val(" ");
       $("#selected_services").val(services.join(", "));
+  }
+  function updateTotal() {
       $("#quoted_amount").val(total);
       $("#total").html("$" + total);
   }

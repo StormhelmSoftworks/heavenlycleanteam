@@ -115,6 +115,8 @@ body {
   }
 }
 
+
+
 .content {
   display: flex;
   justify-content: center;
@@ -172,6 +174,16 @@ body {
 #companyname {
   font-family: 'Caveat Bush', cursive;
 }
+
+#about_us_picture {
+  margin: 0 auto;
+  img {
+    height: auto;
+    width: 100%;
+
+  }
+}
+
 
 @media (max-width: 1200px) {
   .carousel-inner img {
