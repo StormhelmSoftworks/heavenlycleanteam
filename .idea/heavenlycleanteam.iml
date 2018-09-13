@@ -35,6 +35,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v5.2.1, RVM: ruby-2.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v5.2.1, RVM: ruby-2.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.5.2, RVM: ruby-2.4.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="animate-rails (v1.0.10, RVM: ruby-2.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v9.0.0, RVM: ruby-2.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="autoprefixer-rails (v9.1.3, RVM: ruby-2.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.12, RVM: ruby-2.4.4) [gem]" level="application" />

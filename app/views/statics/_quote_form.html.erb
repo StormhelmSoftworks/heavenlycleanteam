@@ -2,26 +2,28 @@
   <form id="BacktellForm0231943" action="https://my.serviceautopilot.com/ProcessForm.aspx" enctype="multipart/form-data" data-ajax="false" method="post" onsubmit="return Validate()">
     <input type="hidden" name="Source" value="web"/><input type="hidden" name="FormID" value="3f88dbe7-86ad-4c5c-a484-fec61b430e3e"/>
 
-    <h4>What kind of residence do you have?</h4>
-    <select name="7f279813-16dd-4ace-a563-81905f1610c8" class="form-control">
-      <option value="House" selected="selected">House</option>
-      <option value="Apartment">Apartment</option>
-      <option value="Double-Wide">Double-Wide</option>
-    </select>
+    <div id="quote_form_upper">
+      <h4>What kind of residence do you have?</h4>
+      <select name="7f279813-16dd-4ace-a563-81905f1610c8" class="form-control">
+        <option value="House" selected="selected">House</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Double-Wide">Double-Wide</option>
+      </select>
 
-    <br />
-    <h4>How many beds, baths, and closets are in your home?</h4>
-    <br />
+      <br />
+      <h4>How many beds, baths, and closets are in your home?</h4>
+      <br />
 
 
-    <p>Beds</p>
-    <input name="d565aaeb-7f4f-4ee2-b7e0-c31f2257ff3e" id="bedroom_field" type="number" min="0" max="255" value="0" class="form-control"/>
+      <p>Beds</p>
+      <input name="d565aaeb-7f4f-4ee2-b7e0-c31f2257ff3e" id="bedroom_field" type="number" min="0" max="255" value="0" class="form-control"/>
 
-    <p>Baths</p>
-    <input name="11587dae-f80f-4d91-b2d1-c0e38d03109e" type="number" id="bathroom_field" min="0" max="255" value="0" class="form-control"/>
+      <p>Baths</p>
+      <input name="11587dae-f80f-4d91-b2d1-c0e38d03109e" type="number" id="bathroom_field" min="0" max="255" value="0" class="form-control"/>
 
-    <p>Closets</p>
-    <input name="d65a8bea-e5ac-4937-825b-e0af9ea91013" type="number" id="closet_field" min="0" max="255" value="0" class="form-control"/>
+      <p>Closets</p>
+      <input name="d65a8bea-e5ac-4937-825b-e0af9ea91013" type="number" id="closet_field" min="0" max="255" value="0" class="form-control"/>
+
 
     <br />
     <h4>What services do you need?</h4>
@@ -81,6 +83,9 @@
       </div>
     </div>
 
+    </div>
+    <!-- bottom of upper portion-->
+
     <br/>
     <a class="btn btn-primary btn-block" id="service-list-expander" data-toggle="collapse" href="#about_you" role="button" aria-expanded="false" aria-controls="collapseExample">
       NEXT
@@ -123,8 +128,14 @@
   var total = 0;
   var services = [];
   $("#service-list-expander").bind("click", function(){
-     $(".services-list").css("height", 2000);
-     $("#service-list-expander").fadeOut();
+      var el = "#about_you";
+      var el2 = "#quote_form_upper";
+      $(".services-list").css("height", 1200);
+      $("#service-list-expander").fadeOut();
+      $(el).addClass("animated fadeIn");
+      $(el2).addClass("animated fadeOut");
+      $(el2).css("display","none");
+
   });
 
   $(".checkbox").change(function() {
