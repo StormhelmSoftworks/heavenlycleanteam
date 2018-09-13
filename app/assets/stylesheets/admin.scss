@@ -5,3 +5,21 @@
   background: #fff;
   text-align: center;
 }
+
+#admin_services-list {
+  padding: 25px;
+  height: 550px;
+  width: 85%;
+  background: #fff;
+  overflow: auto;
+
+
+  .table-options {
+    padding-right: 10px;
+  }
+}
+
+#admin_services-list * {
+  text-align: center;
+}
+
