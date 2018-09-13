@@ -11,6 +11,7 @@ module Admin
     end
 
     def new
+      @page_header = "New Service"
       @service = Service.new
     end
 
@@ -26,7 +27,7 @@ module Admin
     end
 
     def edit
-
+      @page_header = "Edit Service"
     end
 
     def update
@@ -52,7 +53,7 @@ module Admin
     private
 
     def admin_service_params
-      params.require(:service).permit(:name, :rate)
+      params.require(:service).permit(:name, :rate, :category, :qty, :display_name)
     end
 
     def set_service

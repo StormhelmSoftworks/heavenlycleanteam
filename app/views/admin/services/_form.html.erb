@@ -1,32 +1,29 @@
+<div class="admin-form">
+  <h4><%= @page_header %></h4>
+  <%= form_for(@service, url: new_admin_service_path, method: :get) do |f| %>
 
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control", placeholder: "Service Name" %>
+    </div>
 
-<%= form_for @service, class: "form-horizontal" do |f| %>
+    <div class="form-group">
+      <%= f.text_field :display_name, class: "form-control", placeholder: "Service Display Name" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :name, class: "col-sm-2 control-label" %>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :rate, class: "form-control", placeholder: "Rate" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :display_name, class: "col-sm-2 control-label" %>
-    <%= f.text_field :display_name, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :category, class: "form-control", placeholder: "Category" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :rate, class: "col-sm-2 control-label" %>
-    <%= f.text_field :rate, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :qty, class: "form-control", placeholder: "Default Qty" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :category, class: "col-sm-2 control-label" %>
-    <%= f.text_field :category, class: "form-control" %>
-  </div>
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
 
-  <div class="form-group">
-    <%= f.label :qty, class: "col-sm-2 control-label" %>
-    <%= f.text_field :qty, class: "form-control" %>
-  </div>
+  <% end %>
+</div>
 
-  <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
-
-<% end %>
