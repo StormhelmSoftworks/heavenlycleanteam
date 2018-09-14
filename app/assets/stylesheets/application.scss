@@ -34,10 +34,25 @@ body {
 }
 
 .carousel-inner {
-  img{
+  .img{
     height: 400px;
-    width: 500px;
+    width: 100%;
 
+  }
+
+  #car-img-1 {
+    background: asset_url("thct.png") no-repeat;
+    background-size: cover;
+  }
+
+  #car-img-2 {
+    background: asset_url("thct2.png") no-repeat;
+    background-size: cover;
+  }
+
+  #car-img-3 {
+    background: asset_url("thct3.jpg") no-repeat;
+    background-size: cover;
   }
 }
 

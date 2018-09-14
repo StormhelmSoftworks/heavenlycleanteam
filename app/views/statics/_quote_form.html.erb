@@ -148,19 +148,15 @@
           console.log(field);
           qty == 0 ? total += rate * $("#" + field + "_field").val() : total += rate;
           service_history = services;
-          console.log(service_history, services);
           services.push(field);
           updateTotal();
           updateServices();
-          console.log(service_history, services);
       } else {
           services = [];
           services = service_history;
-          console.log(service_history, services);
           qty == 0 ? total -= rate * $("#" + field + "_field").val() : total -= rate;
           updateTotal();
           updateServices();
-          console.log(service_history, services);
       }
   });
 
@@ -178,11 +174,6 @@
     var IsValidated = true;
     var FieldNames = [];
     var Found = false;
-    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    var email = document.getElementsByName('4630074a-1c56-4eb2-beae-5c070af88514')[0].value;
-    if (email == "" || re.test(email) != (true)) {
-        IsValidated = false;
-    }
     var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var email = document.getElementsByName('4630074a-1c56-4eb2-beae-5c070af88514')[0].value;
     if (email == "" || re.test(email) != (true)) {
