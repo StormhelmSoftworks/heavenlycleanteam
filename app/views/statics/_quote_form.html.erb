@@ -126,8 +126,7 @@
 </div>
 <script type="text/javascript">
   var total = 0;
-  var services = [];
-  var service_history = [];
+  var services = {};
   $("#service-list-expander").bind("click", function(){
       var el = "#about_you";
       var el2 = "#quote_form_upper";
@@ -142,35 +141,40 @@
   $(".checkbox").change(function() {
       var attrs = $(this).attr('name').split("_");
       var field = attrs[0].toLowerCase();
+      var fieldValue = $("#" + field + "_field").val();
       var rate =  parseInt(attrs[1]);
       var qty = parseInt(attrs[2]);
       if(this.checked) {
-          console.log(field);
-          qty == 0 ? total += rate * $("#" + field + "_field").val() : total += rate;
-          service_history = services;
-          services.push(field);
-          updateTotal();
-          updateServices();
+          qty == 0 ? services[field] = rate * fieldValue : services[field] = rate;
       } else {
-          services = [];
-          services = service_history;
-          qty == 0 ? total -= rate * $("#" + field + "_field").val() : total -= rate;
-          updateTotal();
-          updateServices();
+          delete services[field];
       }
+      updateTotal(services);
+      updateServices();
   });
 
+
   function updateServices() {
-      $("#selected_services").val(" ");
-      $("#selected_services").val(services.join(", "));
+      var el = $("#selected_services");
+      var keys = Object.keys(services);
+      el.val("");
+      keys.length > 0 ? $("#selected_services").val(Object.keys(services).join(", ")) : null;
   }
-  function updateTotal() {
+  function updateTotal(services) {
+      var values = Object.values(services);
+      if (values.length > 0) {
+          total = values.reduce(function(total, next){
+              return total + next;
+          });
+      } else {
+          total = 0;
+      }
       $("#quoted_amount").val(total);
       $("#total").html("$" + total);
   }
 
 
-  function Validate() {
+  function Validate(e) {
     var IsValidated = true;
     var FieldNames = [];
     var Found = false;
@@ -224,6 +228,7 @@
     if (IsValidated == true) {
         document.getElementById("BacktellForm0231943").submit();
     } else {
+        e.preventDefault();
         alert("Please fill out all required fields.");
     }
   }
