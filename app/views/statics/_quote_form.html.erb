@@ -175,62 +175,61 @@
 
 
   function Validate(e) {
-    var IsValidated = true;
-    var FieldNames = [];
-    var Found = false;
-    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    var email = document.getElementsByName('4630074a-1c56-4eb2-beae-5c070af88514')[0].value;
-    if (email == "" || re.test(email) != (true)) {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_First')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_Last')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Address')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_City')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_State')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Zip')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('520f0e0e-8ad3-41ab-8e7a-be7918255b73')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_First')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_Last')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Address')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_City')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_State')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Zip')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (document.getElementsByName('520f0e0e-8ad3-41ab-8e7a-be7918255b73')[0].value.trim() == "") {
-        IsValidated = false;
-    }
-    if (IsValidated == true) {
-        document.getElementById("BacktellForm0231943").submit();
-    } else {
-        e.preventDefault();
-        alert("Please fill out all required fields.");
-    }
+      e.preventDefault();
+      var IsValidated = true;
+      var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var email = document.getElementsByName('4630074a-1c56-4eb2-beae-5c070af88514')[0].value;
+      if (email == "" || re.test(email) != (true)) {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_First')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_Last')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Address')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_City')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_State')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Zip')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('520f0e0e-8ad3-41ab-8e7a-be7918255b73')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_First')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('6b9be094-06da-4dee-9ac0-fb6d3f739c5e_Last')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Address')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_City')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_State')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('1609fe73-6a36-4d3a-8e28-824f4a98d00d_Zip')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (document.getElementsByName('520f0e0e-8ad3-41ab-8e7a-be7918255b73')[0].value.trim() == "") {
+          IsValidated = false;
+      }
+      if (IsValidated == true) {
+          //document.getElementById("BacktellForm0231943").submit();
+      } else {
+
+          alert("Please fill out all required fields.");
+      }
   }
 
   function CreateEntity() {

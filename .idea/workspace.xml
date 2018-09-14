@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="152ada28-f12f-404c-9192-94d8cc48371a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/statics/_quote_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/statics/_quote_form.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,8 +82,8 @@
       <file leaf-file-name="_quote_form.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/statics/_quote_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="230" column="27" selection-start-line="230" selection-start-column="27" selection-end-line="230" selection-end-column="27" />
+            <state relative-caret-position="120">
+              <caret line="177" column="6" selection-start-line="177" selection-start-column="6" selection-end-line="177" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -574,12 +573,12 @@
       <workItem from="1536794200931" duration="9232000" />
       <workItem from="1536841901063" duration="7426000" />
       <workItem from="1536928083061" duration="1857000" />
-      <workItem from="1536939049004" duration="4069000" />
+      <workItem from="1536939049004" duration="4507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113463000" />
+    <option name="totallyTimeSpent" value="113901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -924,8 +923,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/statics/_quote_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="230" column="27" selection-start-line="230" selection-start-column="27" selection-end-line="230" selection-end-column="27" />
+        <state relative-caret-position="120">
+          <caret line="177" column="6" selection-start-line="177" selection-start-column="6" selection-end-line="177" selection-end-column="6" />
         </state>
       </provider>
     </entry>
