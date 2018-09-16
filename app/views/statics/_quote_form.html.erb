@@ -111,7 +111,7 @@
       <br/>
       <input name="520f0e0e-8ad3-41ab-8e7a-be7918255b73" type="text" placeholder="Phone Number (Required)" class="form-control"/>
       <br/>
-      <button onclick="Validate()" class="btn btn-primary">Submit</button>
+      <button class="btn btn-primary" id="submit_button">Submit</button>
       <input name="1fb55462-fc40-40fd-9372-dccb2bd839d1" type="text" maxlength="255" value="" id="quoted_amount" style="display: none"/>
       <input name="466d0901-e185-406f-a70c-9bb1cd5961ab" type="text" maxlength="255" value="" id="selected_services" style="display: none"/>
     </div>
@@ -173,9 +173,14 @@
       $("#total").html("$" + total);
   }
 
-
-  function Validate(e) {
+  document.getElementById("submit_button").addEventListener("click", function(e) {
       e.preventDefault();
+      Validate();
+  });
+
+
+  function Validate() {
+
       var IsValidated = true;
       var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
       var email = document.getElementsByName('4630074a-1c56-4eb2-beae-5c070af88514')[0].value;
