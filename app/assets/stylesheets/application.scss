@@ -210,14 +210,13 @@ body {
     height: 600px;
     .card {
       height: 500px;
+      width: 250px;
       img {
         height: 200px;
         width: 100%;
       }
     }
   }
-
-
 
   #services_page {
     padding-top: 200px;
@@ -230,6 +229,15 @@ body {
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .services {
+    .card {
+      width: 200px;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .carousel-caption h4 {
     display: none;

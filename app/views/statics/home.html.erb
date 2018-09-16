@@ -5,21 +5,23 @@
 
 </section>
 <section class="services">
-  <%= info_card(
-          "Partial House Cleaning",
-          asset_path("card3.jpg"),
-          "From Bathrooms, Bedrooms and Closets, to the Living Room and Kitchen.
-          We offer Room-by-room cleaning at a single flat rate."
-      ) %>
-  <%= info_card(
-          "Deep Cleaning",
-          asset_path("card2.jpg"),
-          "Need EVERYTHING cleaned and organized? Our deep cleaning service covers all rooms and the exterior windows/drive way."
-      ) %>
-  <%= info_card(
-          "Move In/Out Cleaning",
-          asset_path("card1.jpg"),
-          "Bought your dream home?  Off to college? We've got you covered. Deep cleaning for all rooms with optional junk disposal."
-      ) %>
+  <%= react_component("InfoCard", {
+      header: "Partial House Cleaning",
+      imgSrc: asset_path("card3.jpg"),
+      desc: "From Bathrooms, Bedrooms and Closets, to the Living Room and Kitchen. We offer Room-by-room cleaning at a single flat rate.",
+      path: services_list_path
+  }) %>
+  <%= react_component("InfoCard", {
+      header: "Deep Cleaning",
+      imgSrc: asset_path("card2.jpg"),
+      desc: "Need EVERYTHING cleaned and organized? Our deep cleaning service covers all rooms and the exterior windows/drive way.",
+      path: services_list_path
+  }) %>
+  <%= react_component("InfoCard", {
+      header: "Move In/Out Cleaning",
+      imgSrc: asset_path("card1.jpg"),
+      desc: "Bought your dream home?  Off to college? We've got you covered. Deep cleaning for all rooms with optional junk disposal.",
+      path: services_list_path
+  }) %>
 
 </section>
